@@ -24,12 +24,12 @@ DEMO EXAMPLE
 
 3-segment robotic arm following spiral
 
-(https://user-images.githubusercontent.com/29254866/27431974-a4c151aa-574e-11e7-8029-06196a9baa13.gif)
+![image 1](https://user-images.githubusercontent.com/29254866/27431974-a4c151aa-574e-11e7-8029-06196a9baa13.gif)
 
 4-segment robotic arm following flowerish curve
 
-(https://user-images.githubusercontent.com/29254866/27432064-fa2e9fbc-574e-11e7-9c9b-b737b5730053.gif)
+![image 2](https://user-images.githubusercontent.com/29254866/27432064-fa2e9fbc-574e-11e7-9c9b-b737b5730053.gif)
 
 8-segment robotic arm following flowerish curve
 
-(https://user-images.githubusercontent.com/29254866/27432081-0717d28e-574f-11e7-8108-bdbef33fd0ea.gif)
+![image 3](https://user-images.githubusercontent.com/29254866/27432081-0717d28e-574f-11e7-8108-bdbef33fd0ea.gif)
