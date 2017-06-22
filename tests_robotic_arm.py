@@ -1,7 +1,5 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import math
-import scipy.optimize as opt
+import numpy as np
 import robotic_arm
 
 

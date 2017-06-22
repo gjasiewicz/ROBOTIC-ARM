@@ -1,7 +1,6 @@
+import math
 import matplotlib.pyplot as plt
 import numpy as np
-import math
-import scipy.optimize as opt
 import robotic_arm
 
 T = np.linspace(0, 2*math.pi, num=100, endpoint=True)  # We set up lenght of T
@@ -42,7 +41,7 @@ def parametric_ranunculoid_point(t):
                      (-6.0/5)*r*math.sin(t) + (1.0/5)*r*math.sin(6*t)))
 
 
-def demo_n_robotic_arm(vectors, parametric_p, T, axis):
+def demo_n_robotic_arm(vectors, parametric_p, T, axis, save_img = True):
     """Findind the optimal position of n-robotic arm (n-joint vectors)
     for reaching the target points on a given curve,
     we set up axis limit [x1, x2, y1, y2] for plot
@@ -60,11 +59,12 @@ def demo_n_robotic_arm(vectors, parametric_p, T, axis):
         angles = robotic_arm.optimize_joints_angles(point_on_curve, vectors, angles)  # updating initial guess
         joints = robotic_arm.compute_position_of_joints_from_angles(vectors, angles)
         plt.plot(*zip(*joints), color="b")
-        plt.axis(axis)
-        for j in np.linspace(0, 2*math.pi, num=100, endpoint=True):
-            plt.scatter(parametric_p(j)[0], parametric_p(j)[1], color="r")
-        plt.savefig(r"C:\Users\gosia\Desktop\python\algebraliniowa\GIF\{0:0>5}.png".format(i))
-        plt.clf()
+        if save_img:
+            plt.axis(axis)
+            for j in np.linspace(0, 2*math.pi, num=100, endpoint=True):
+                plt.scatter(parametric_p(j)[0], parametric_p(j)[1], color="r")
+            plt.savefig(r"{0:0>5}.png".format(i))
+            plt.clf()
 
 
 def demo_compare_robots(n, m, parametric_curve, T, angle, axis):
@@ -89,4 +89,10 @@ def demo_compare_robots(n, m, parametric_curve, T, angle, axis):
 
 
 if __name__ == "__main__":
+    vectors = robotic_arm.generate_initial_vectors(4)
+    demo_n_robotic_arm(vectors, parametric_ranunculoid_point, T, axis_runcloid, save_img = True)
     plt.show()
+    
+    
+    
+

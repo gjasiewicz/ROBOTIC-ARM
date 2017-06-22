@@ -1,6 +1,5 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import math
+import numpy as np
 import scipy.optimize as opt
 
 
@@ -48,7 +47,7 @@ def compute_position_of_joints_from_angles(vectors, angles):
 def distance_to_minimise(target_point, vectors, angles):
     """Distance between target_point and tip of n-robotic arm (end effector)
     after rotating by angles.
-    Function is crucial ##########################
+    Function is crucial 
     @type  target_point: np.array or tuple
     @type  vectors: list of np.arrays or tuples
     @type  angles: list of floats or array of floats
@@ -79,4 +78,4 @@ def is_target_point_reachable(target_point, vectors):
 
 
 if __name__ == "__main__":
-    plt.show()
+    pass
