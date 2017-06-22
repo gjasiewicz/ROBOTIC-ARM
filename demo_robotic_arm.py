@@ -50,6 +50,7 @@ def demo_n_robotic_arm(vectors, parametric_p, T, axis, save_img = True):
     @type  T: np.array of floats, we set up lenght of T
     @type  axis: list
     @return type: plot"""
+    curve_xy = [parametric_p(t) for t in T]
     angles = [math.pi/4]*(len(vectors)-1)  # Initial guess for optimize function
     for i, t in enumerate(T):
         point_on_curve = parametric_p(t)
@@ -61,8 +62,7 @@ def demo_n_robotic_arm(vectors, parametric_p, T, axis, save_img = True):
         plt.plot(*zip(*joints), color="b")
         if save_img:
             plt.axis(axis)
-            for j in np.linspace(0, 2*math.pi, num=100, endpoint=True):
-                plt.scatter(parametric_p(j)[0], parametric_p(j)[1], color="r")
+            plt.plot(*zip(*curve_xy), color="r", linestyle="-")
             plt.savefig(r"{0:0>5}.png".format(i))
             plt.clf()
 
